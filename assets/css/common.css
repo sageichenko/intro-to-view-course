@@ -1,0 +1,55 @@
+.page-enter-active {
+    animation: fadeOpacityIn .45s ease-out both;
+}
+
+.page-leave-active {
+    animation: fadeOpacityOut .65s ease-in both;
+}
+
+.translate-enter-active {
+    animation: acrossIn .45s ease-out both;
+}
+
+.translate-leave-active {
+    animation: acrossOut .65s ease-in both;
+}
+
+@keyframes fadeOpacityIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOpacityOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes acrossIn {
+    0% {
+        transform: translate3d(-100%, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes acrossOut {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(100%, 0, 0);
+    }
+}
