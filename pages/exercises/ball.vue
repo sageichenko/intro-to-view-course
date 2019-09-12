@@ -1,20 +1,27 @@
 <template>
-    <div class="ball-app">
-        <div class="button-group">
-            <button @click="animateBall" v-if="!running">Start</button>
-            <button @click="cancelAnimate" v-else>Reset</button>
-            <height-counter @bottomincrease="incrementBottom"
-                            @bottomdecrease="decrementBottom"
-                            @topincrease="incrementTop"
-                            @topdecrease="decrementTop">
-            </height-counter>
+    <div class="app">
+        <div class="description">
+            В этом упражнении показано взаимодействие дочерних элементов с родительским, а именно передача информации о изменениях и событих от дочернего элемента к родительскому. Кнопки управления высотой являются отдельным компонентом, и при нажатии они сообщают родителю, что что-то изменилось, а родитель обрабатывает это изменение. Когда мяяик прыгает он должен упираться в заданные границы.
+            <br/>
+            <a href="https://codepen.io/sageichenko/pen/aejOMr" class="description__link" target="_blank">Код на codeopen</a>
         </div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" class="bounce">
-            <line x1="400" x2="400" :y1="top+radius" :y2="bottom-radius" stroke="#555" stroke-width="4" stroke-dasharray="5, 5"/>
-            <line x1="390" x2="410" :y1="top+radius" :y2="top+radius" stroke="#555" stroke-width="4"/>
-            <line x1="390" x2="410" :y1="bottom-radius" :y2="bottom-radius" stroke="#555" stroke-width="4"/>
-            <circle :style="{ transform: `translate3d(${x1}px, ${y1}px, 0)` }" :r="radius" cx="0" cy="0" fill="teal"/>
-        </svg>
+        <div class="ball-app">
+            <div class="button-group">
+                <button @click="animateBall" v-if="!running">Start</button>
+                <button @click="cancelAnimate" v-else>Reset</button>
+                <height-counter @bottomincrease="incrementBottom"
+                                @bottomdecrease="decrementBottom"
+                                @topincrease="incrementTop"
+                                @topdecrease="decrementTop">
+                </height-counter>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" class="bounce">
+                <line x1="400" x2="400" :y1="top+radius" :y2="bottom-radius" stroke="#555" stroke-width="4" stroke-dasharray="5, 5"/>
+                <line x1="390" x2="410" :y1="top+radius" :y2="top+radius" stroke="#555" stroke-width="4"/>
+                <line x1="390" x2="410" :y1="bottom-radius" :y2="bottom-radius" stroke="#555" stroke-width="4"/>
+                <circle :style="{ transform: `translate3d(${x1}px, ${y1}px, 0)` }" :r="radius" cx="0" cy="0" fill="teal"/>
+            </svg>
+        </div>
     </div>
 </template>
 
@@ -114,18 +121,18 @@
     }
 
     .button-group {
-        width: 800px;
+        width: 80rem;
         margin: 0 auto;
         text-align: center;
         button {
             font-family: 'Montserrat', sans-serif;
-            min-width: 80px;
+            min-width: 8rem;
             border: none;
-            padding: 8px 16px;
+            padding: .8rem 1.6rem;
             background: #444;
             font-size: 1.5rem;
             color: white;
-            border-radius: 3px;
+            border-radius: .3rem;
             outline: 0;
             cursor: pointer;
         }

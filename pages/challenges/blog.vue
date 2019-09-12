@@ -1,29 +1,35 @@
 <template>
-    <div class="blog">
-        <h2 class="blog__header">Blog Posts</h2>
-
-        <div class="blog__new new-post">
-            <h3 class="new-post__header">Add a New Post</h3>
-            <form class="new-post__form" @submit.prevent="addPost">
-                <input class="new-post__text-input" v-model="newTitle" placeholder="title" required/>
-                <input class="new-post__text-input" v-model="newAuthor" placeholder="author name" required/>
-                <select class="new-post__label-select label-select" v-model="newLabel" required>
-                    <option class="label-select__option" disabled value="">Add a New label</option>
-                    <option class="label-select__option" v-for="label in labels" :key="label">{{label}}</option>
-                </select>
-                <button class="new-post__submit" type="submit">Add New Blog Post</button>
-            </form>
+    <div class="app">
+        <div class="description">
+            Задание в котором нужно было реализовать возможность добавления новых постов и фильтрации существующих.
+            <br/>
+            <a href="https://codepen.io/sageichenko/pen/aeYmrr" class="description__link" target="_blank">Код на codeopen</a>
         </div>
+        <div class="blog">
+            <h2 class="blog__header">Blog Posts</h2>
+            <div class="blog__new new-post">
+                <h3 class="new-post__header">Add a New Post</h3>
+                <form class="new-post__form" @submit.prevent="addPost">
+                    <input class="new-post__text-input" v-model="newTitle" placeholder="title" required/>
+                    <input class="new-post__text-input" v-model="newAuthor" placeholder="author name" required/>
+                    <select class="new-post__label-select label-select" v-model="newLabel" required>
+                        <option class="label-select__option" disabled value="">Add a New label</option>
+                        <option class="label-select__option" v-for="label in labels" :key="label">{{label}}</option>
+                    </select>
+                    <button class="new-post__submit" type="submit">Add New Blog Post</button>
+                </form>
+            </div>
 
-        <select class="blog__label-select label-select" v-model="selectedLabel">
-            <option class="label-select__option" disabled value="">Filter with a label</option>
-            <option class="label-select__option" v-for="label in labels" :key="label">{{label}}</option>
-        </select>
+            <select class="blog__label-select label-select" v-model="selectedLabel">
+                <option class="label-select__option" disabled value="">Filter with a label</option>
+                <option class="label-select__option" v-for="label in labels" :key="label">{{label}}</option>
+            </select>
 
-        <div class="blog__post" v-for="post in filteredPost" :key="post">
-            <span class="post__label">{{ post.label }}</span>
-            <p class="post__title">{{ post.title }}</p>
-            <small class="post__author">{{ post.author }}</small>
+            <div class="blog__post" v-for="post in filteredPost" :key="post">
+                <span class="post__label">{{ post.label }}</span>
+                <p class="post__title">{{ post.title }}</p>
+                <small class="post__author">{{ post.author }}</small>
+            </div>
         </div>
     </div>
 </template>

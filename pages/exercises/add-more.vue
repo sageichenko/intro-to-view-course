@@ -1,23 +1,31 @@
 <template>
-    <div class="beer-section">
-        <h1 class="header beer-section__header">🍺 Make yourself some Punk Beers 🍻</h1>
-        <div class="loading" v-if="beers.length === 0">Waiting...</div>
-        <div v-for="beer in beers" :key="beer" class="beer">
-            <div class="beer__img">
-                <img :src="beer.img" alt="">
-            </div>
-            <div class="beer__info">
-                <h2 class="beer__name header">{{ beer.name }}</h2>
-                <p class="beer__tagline beer__text bright">{{ beer.tagline }}</p>
-                <p class="beer__desc beer__text"><span class="bright">Description: </span>{{ beer.desc }}</p>
-                <p class="beer__text"><span class="bright">Tips: </span>{{ beer.tips }}</p>
-                <h3 class="bright beer__food-heading header">Food pairings</h3>
-                <ul class="food-list">
-                    <li class="food-list__item  beer__text" v-for="item in beer.food" :key="item">{{ item }}</li>
-                </ul>
+    <div class="app">
+        <div class="description">
+            Пример использования watch, то есть, есть наблюдатель изменения какого то значения, в данном случае, когда мы скроллим до конца страницы запрашиваются следующие данные
+            <br/>
+            <a href="https://codepen.io/sageichenko/pen/JgLEMO" class="description__link" target="_blank">Код на codeopen</a>
+        </div>
+        <div class="beer-section">
+            <h1 class="header beer-section__header">🍺 Make yourself some Punk Beers 🍻</h1>
+            <div class="loading" v-if="beers.length === 0">Waiting...</div>
+            <div v-for="beer in beers" :key="beer" class="beer">
+                <div class="beer__img">
+                    <img :src="beer.img" alt="">
+                </div>
+                <div class="beer__info">
+                    <h2 class="beer__name header">{{ beer.name }}</h2>
+                    <p class="beer__tagline beer__text bright">{{ beer.tagline }}</p>
+                    <p class="beer__desc beer__text"><span class="bright">Description: </span>{{ beer.desc }}</p>
+                    <p class="beer__text"><span class="bright">Tips: </span>{{ beer.tips }}</p>
+                    <h3 class="bright beer__food-heading header">Food pairings</h3>
+                    <ul class="food-list">
+                        <li class="food-list__item  beer__text" v-for="item in beer.food" :key="item">{{ item }}</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
+
 </template>
 
 <script>
@@ -120,7 +128,8 @@
             border-right: .1rem solid #f44822;
 
             & > img {
-                height: 100%;
+                max-height: 100%;
+                margin: 3rem;
             }
         }
 

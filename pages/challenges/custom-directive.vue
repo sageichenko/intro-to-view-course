@@ -1,10 +1,19 @@
 <template>
-    <div class="success">
-        <small class="success__text">Your place here: </small>
-        <input class="success__input" type="number" v-model="num"/>
-        <div class="success__won">
-            <h2 class="success__heading">Congratulations!</h2>
-            <p class="success__text">You won <span class="success__place" v-color="'#c00'">{{ num | place }}</span> place!</p>
+    <div class="app">
+        <div class="description">
+            Задание в котором нужно было создать директиву которая бы изменяла цвет текста и добавить фильтр для корректного отображения порядкого  номера.
+            <br/>
+            <a href="https://github.com/sageichenko/intro-to-view-course/blob/master/plugins/directives.js" class="description__link" target="_blank">Создание директивы</a>
+            <br/>
+            <a href="https://github.com/sageichenko/intro-to-view-course/blob/master/pages/challenges/custom-directive.vue" class="description__link" target="_blank">Компонент</a>
+        </div>
+        <div class="success">
+            <small class="success__text">Your place here: </small>
+            <input class="success__input" type="number" v-model="num"/>
+            <div class="success__won">
+                <h2 class="success__heading">Congratulations!</h2>
+                <p class="success__text">You won <span class="success__place" v-color="'#c00'">{{ num | place }}</span> place!</p>
+            </div>
         </div>
     </div>
 </template>

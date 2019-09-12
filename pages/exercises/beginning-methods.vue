@@ -1,18 +1,25 @@
 <template>
-    <div class="blog">
-        <div class="blog__comments">
-            <ul class="blog__comment-list">
-                <li class="blog__comment" v-for="comment in comments" :key="comment">
-                    {{comment}}
-                </li>
-            </ul>
+    <div class="app">
+        <div class="description">
+            Обычные методы, по нажатию кнопки новый коммент добавляется в массив.
+            <br/>
+            <a href="https://codepen.io/sageichenko/pen/EqQGzz" class="description__link" target="_blank">Код на codeopen</a>
         </div>
-        <input class="blog__new-comment"
-                v-model="newComment"
-               type="text"
-               placeholder="Add a new comment :)">
-        <button class="blog__add-btn"
-                @click="addComment">Add a comment</button>
+        <div class="blog">
+            <div class="blog__comments">
+                <ul class="blog__comment-list">
+                    <li class="blog__comment" v-for="comment in comments" :key="comment">
+                        {{comment}}
+                    </li>
+                </ul>
+            </div>
+            <input class="blog__new-comment"
+                    v-model="newComment"
+                   type="text"
+                   placeholder="Add a new comment :)">
+            <button class="blog__add-btn"
+                    @click="addComment">Add a comment</button>
+        </div>
     </div>
 </template>
 

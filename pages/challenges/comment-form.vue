@@ -1,5 +1,12 @@
 <template>
     <div class="app">
+        <div class="description">
+            Задание в котором нужно было реализовать блог с использованием Vuex, справа отображается содержимое $store.state.
+            <br/>
+            <a href="https://github.com/sageichenko/intro-to-view-course/blob/master/pages/challenges/comment-form.vue" class="description__link" target="_blank">Компонент</a>
+            <br/>
+            <a href="https://github.com/sageichenko/intro-to-view-course/blob/master/store/index.js" class="description__link" target="_blank">Хранилище</a>
+        </div>
         <div class="blog">
             <div class="blog__post">
                 <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/vue-post-photo.jpg"

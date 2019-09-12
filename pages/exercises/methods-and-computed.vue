@@ -1,5 +1,10 @@
 <template>
     <div class="films">
+        <div class="description">
+            Для сортировки используются обычные методы, для поиска вычисляемые значения.
+            <br/>
+            <a href="https://codepen.io/sageichenko/pen/gVvqxo" class="description__link" target="_blank">Код на codeopen</a>
+        </div>
         <p class="films__row films__text">
             Search: <input class="films__search films__text" v-model="searchText" type="text">
         </p>
@@ -111,15 +116,4 @@
             border-bottom: .1rem solid #888;
         }
     }
-
-    /*td:first-child {*/
-    /*    width: 300px;*/
-    /*    border-right: 1px solid #888;*/
-    /*}*/
-
-    /*tr:last-child {*/
-    /*    td {*/
-    /*        border-bottom: none;*/
-    /*    }*/
-    /*}*/
 </style>

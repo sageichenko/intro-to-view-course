@@ -55,5 +55,10 @@
       color: #cc0000;
     }
   }
+
+  .description {
+    padding: 2rem;
+    font-size: 1.8rem;
+  }
 </style>
 

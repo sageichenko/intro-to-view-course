@@ -1,19 +1,26 @@
 <template>
-<div class="bouncing-ball">
-    <h3 class="bouncing-ball__header">Bounce the Ball!</h3>
-    <button class="bouncing-ball__btn" @click="toggleShow">
-        <span class="bouncing-ball__text" v-if="isShowing">Get it gone!</span>
-        <span class="bouncing-ball__text" v-else>Here we go!</span>
-    </button>
-    <transition
-            name="ballmove"
-            enter-active-class="bouncein"
-            leave-active-class="rollout">
-        <div class="bouncing-ball__ball-wrap" v-if="isShowing">
-            <div class="bouncing-ball__ball"></div>
+    <div class="app">
+        <div class="description">
+            Задание в котором нужно было реализовать анимацию при появлении элемента и его удалении (mounted и unmounted) P.S. при первом появлении анимация иногда срабатывавет криво.
+            <br/>
+            <a href="https://codepen.io/sageichenko/pen/zYOjQpB" class="description__link" target="_blank">Код на codeopen</a>
         </div>
-    </transition>
-</div>
+        <div class="bouncing-ball">
+            <h3 class="bouncing-ball__header">Bounce the Ball!</h3>
+            <button class="bouncing-ball__btn" @click="toggleShow">
+                <span class="bouncing-ball__text" v-if="isShowing">Get it gone!</span>
+                <span class="bouncing-ball__text" v-else>Here we go!</span>
+            </button>
+            <transition
+                    name="ballmove"
+                    enter-active-class="bouncein"
+                    leave-active-class="rollout">
+                <div class="bouncing-ball__ball-wrap" v-if="isShowing">
+                    <div class="bouncing-ball__ball"></div>
+                </div>
+            </transition>
+        </div>
+    </div>
 </template>
 
 <script>

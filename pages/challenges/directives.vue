@@ -8,7 +8,7 @@
             <input class="counter__num" v-model.number="num2"
                    type="number"/>
             <span class="counter__operation">=</span>
-            <span>{{num1 + num2}}</span>
+            <span class="counter__num">{{num1 + num2}}</span>
         </div>
         <div class="row framework">
             <select class="framework__select framework__text" name="framework"

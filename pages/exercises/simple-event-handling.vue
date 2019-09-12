@@ -1,16 +1,23 @@
 <template>
-    <div class="content"
-         @mousemove="xyCoordinate"
-         :style="{ backgroundColor: `hsl(${x}, 80%, 50%)` }">
-        <p class="counter">
-            <button class="counter__button" :disabled="counter <= 0" @click="decrement">-</button>
-            <span class="counter__text">{{counter}}</span>
-            <button class="counter__button" @click="increment">+</button>
-        </p>
-        <p class="coordinates">
-            x-coordinate {{x}}
-            y-coordinate {{y}}
-        </p>
+    <div class="app">
+        <div class="description">
+            Знакомство с обработкой событий, здесь отслеживаются события движения мыши и клики по контролам + и -
+            <br/>
+            <a href="https://codepen.io/sageichenko/pen/bXLMXa" class="description__link" target="_blank">Код на codeopen</a>
+        </div>
+        <div class="section"
+             @mousemove="xyCoordinate"
+             :style="{ backgroundColor: `hsl(${x}, 80%, 50%)` }">
+            <p class="counter">
+                <button class="counter__button" :disabled="counter <= 0" @click="decrement">-</button>
+                <span class="counter__text">{{counter}}</span>
+                <button class="counter__button" @click="increment">+</button>
+            </p>
+            <p class="coordinates">
+                x-coordinate {{x}}
+                y-coordinate {{y}}
+            </p>
+        </div>
     </div>
 </template>
 
@@ -42,7 +49,7 @@
 </script>
 
 <style scoped lang="less">
-    .content {
+    .section {
         width: 100%;
         height: 100%;
         padding: 15vmin;
