@@ -29,6 +29,7 @@ module.exports = {
   plugins: [
     'plugins/directives.js'
   ],
+  router: { base: '/intro-to-view-course/' },
 
   /*
   ** Build configuration
